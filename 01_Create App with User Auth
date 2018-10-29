@@ -1,0 +1,41 @@
+01 Create App with User Auth
+----------------------------
+
+1. Create app with default db (mysql)
+	NOTE: Using laragon
+	> pmanager
+	Open it in the browser
+	> pmanager.test :)
+	> commit to git
+
+2. Pust it to Github
+	> create a new repository
+	> git remote add origin git@github.com:ingafter60/pmanager.git
+	Create SSH Key
+	> cat ~/.ssh/id_rsa.pub
+	...
+	Use the created SSH key to create SSH Key
+	> git push -u origin master
+	...
+	Refresh the browser and check the result :)
+
+3. Create User with Authentication
+	Create a new git branch
+	> git checkout -b 1_CreateUserwithAuth
+	> Create db: pmanager
+	> php artisan make:auth
+	> php artisan migrate
+	> Register a new user
+	> Testing: logout, then login :)
+
+4. Push to Github
+	> git add .
+	> git commit
+	> git push origin	1_CreateUserwithAuth
+
+5. Merging the branches
+	> git checkout master
+	NOTE: make sure you are in the master branch
+	> I:\laragon\www\pmanager (master)
+	> λ git merge 1_CreateUserwithAuth
+
